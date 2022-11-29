@@ -21,11 +21,11 @@ console.log("clothes", clothes)
 return (
   <div>
     <NavBar />
-    <Header /> 
     <Switch>
       <Route exact path="/">
-      <CardsContainer /> 
-      <AddBar />
+        <Header /> 
+        <CardsContainer /> 
+        <AddBar />
       </Route>
       <Route path="/wardrobe">
         <Wardrobe />
@@ -37,3 +37,10 @@ return (
 }
 
 export default App;
+
+//add image, clothe name, description in home
+//portfolio renders all cards
+// can i create button for each day of the week which can update data obj,
+//wardrobe renders a card for each week and shows card name only?
+// add are you a bot button to open /home
+//add dropdown for each card with the days of the week and do an onChange to update the object value;
