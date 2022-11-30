@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
 import CardsContainer from "./CardsContainer"
@@ -8,31 +8,37 @@ import Wardrobe from "./Wardrobe"
 
 function App() {
   const [clothes, setClothes] = useState([])
-  
-useEffect(()=> {
-  fetch("http://localhost:3000/clothes")
-  .then(r => r.json())
-  .then(data => setClothes(data))
 
-}, [])
+  useEffect(() => {
+    fetch("http://localhost:3000/clothes")
+      .then(r => r.json())
+      .then(data => {
+        setClothes(data)
+      })
+      .catch(error =>{
+        console.log(error)
+        alert("Uh oh! Seems like there was an error, please try again")
+      })
 
-console.log("clothes", clothes)
+  }, [])
 
-return (
-  <div>
-    <NavBar />
-    <Switch>
-      <Route exact path="/">
-        <Header /> 
-        <CardsContainer /> 
-        <AddBar />
-      </Route>
-      <Route path="/wardrobe">
-        <Wardrobe />
-      </Route>
-    </Switch>
-  </div>
-)
+  // console.log("clothes", clothes)
+
+  return (
+    <div>
+      <NavBar />
+      <Switch>
+        <Route exact path="/">
+          <Header />
+          <AddBar clothes={clothes} setClothes={setClothes}/>
+          <CardsContainer clothes={clothes} />
+        </Route>
+        <Route path="/wardrobe">
+          <Wardrobe />
+        </Route>
+      </Switch>
+    </div>
+  )
 
 }
 
