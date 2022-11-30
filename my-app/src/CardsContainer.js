@@ -8,28 +8,29 @@ function CardsContainer({ clothes }) {
         setDate(e.target.value)
     }
 
-    function handleDateClick(){
-        if (date !== "Add to wardrobe"){
+    function handleDateClick(e){
+        console.log(e.target)
+        if (date !== "All"){
             console.log(date)
-        }
-    }
+        } // how to get value of target? 
+    } //needs to take date and add it to clothes 
 
     const clotheCards = clothes.map((item) => {
         const { id, name, description, image } = item
         return (
             <li key={id} style={{ border: "10px" }}>
-                <h1>{name}</h1>
+                <h3>{name}</h3>
                 <p>{description}</p>
                 <img src={image} alt="" />
                 <select onChange={handleDateChange}>
-                    <option>Add to wardrobe</option>
-                    <option>Sunday</option>
-                    <option>Monday</option>
-                    <option>Tuesday</option>
-                    <option>Wednesday</option>
-                    <option>Thursday</option>
-                    <option>Friday</option>
-                    <option>Saturday</option>
+                    <option value="All">Add to wardrobe</option>
+                    <option value="Sunday">Sunday</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
                 </select>
                 <button onClick={handleDateClick}>Add</button>
             </li>
