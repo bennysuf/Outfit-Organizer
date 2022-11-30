@@ -1,19 +1,61 @@
+import { useState } from "react"
+import uuid from 'react-uuid';
 
-function AddBar(){
+function AddBar({clothes, setClothes}) {
+    const [onName, setOnName] = useState("")
+    const [description, setDescription] = useState("")
+    const [image, setImage] = useState("")
 
-return (
-    <form>
-<input type="text" value="Clothe name" />
-<br />
-<label for="fname">First name:</label>
-<br />
-  <input type="text" id="fname" name="fname"/>
-    <br />
-  <label for="lname">Last name:</label>
-  <br />
-  <input type="text" id="lname" name="lname"></input>
-    </form>
-)
+    function handleNameChange(e) {
+        setOnName(e.target.value)
+    }
+    function handleDescriptionChange(e) {
+        setDescription(e.target.value)
+    }
+    function handleImageChange(e) {
+        setImage(e.target.value)
+    }
+
+    function handleSubmit(e){
+        e.preventDefault()
+        fetch("http://localhost:3000/clothes", {
+            Method: 'POST',
+            Headers: {
+              Accept: 'application.json',
+              'Content-Type': 'application/json'
+            },
+            Body: JSON.stringify({
+                id: uuid(),
+                name: onName, 
+                description: description,
+                image: image
+            }),
+        })
+        const newItem = {
+            id: uuid(),
+            name: onName, 
+            description: description,
+            image: image
+        }
+        setClothes([...clothes, newItem])
+
+       //take all states and post and add to clothes state with values as object values
+    }
+
+    return (
+        <form style={{marginBottom: "10px"}}>
+            <label style={{marginRight: "5px"}}>Clothe name:</label>
+            <input name="name" type="text" value={onName} style={{marginBottom: "10px"}} onChange={handleNameChange}/>
+            <br />
+            <label style={{marginRight: "5px"}}>Description:</label>
+            <input type="text" name="description" value={description} style={{marginBottom: "10px"}} onChange={handleDescriptionChange}/>
+            <br />
+            <label style={{marginRight: "5px"}}>Image link:</label>
+            <input type="text" name="image" value={image} style={{marginBottom: "10px"}} onChange={handleImageChange}/>
+            <br />
+            <button onClick={handleSubmit}>Submit</button>
+        </form>
+    )
 
 }
 
