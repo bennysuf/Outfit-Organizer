@@ -1,6 +1,19 @@
+import Cards from "./Cards"
 
+function CardsContainer({ clothes }) {
 
-function CardsContainer(){
+    const clotheCards = clothes.map((item) => {
+        const { id, name, description, image } = item
+        return (
+            <li key={id} style={{ border: "10px" }}>
+                <h1>{name}</h1>
+                <p>{description}</p>
+                <img src={image} alt="" />
+            </li>
+        )
+    })
+
+    return <Cards clothes={clotheCards} />
 
 }
 
