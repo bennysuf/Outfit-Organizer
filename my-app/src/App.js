@@ -42,6 +42,9 @@ function App() {
         <Route path="/wardrobe">
           <Wardrobe clothes={clothes} setClothes={setClothes} />
         </Route>
+        <Route path="*">
+          <h1>404 Page Not Found</h1>
+        </Route>
       </Switch>
     </div>
   )
