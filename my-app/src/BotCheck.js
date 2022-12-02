@@ -1,10 +1,12 @@
+import { NavLink } from "react-router-dom"
 
-function BotCheck(){
+function BotCheck() {
+
     return (
         <div className="robot">
-        <label>Confirm you aren't a robot</label>
-        <br />
-        <button>click</button>
+            <label>Confirm you aren't a robot</label>
+            <br />
+            <NavLink to="/home"><button>Click</button></NavLink>
         </div >
 
     )
