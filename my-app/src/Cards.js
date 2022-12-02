@@ -1,1 +1,0 @@
-//will create each card to render on the card page
