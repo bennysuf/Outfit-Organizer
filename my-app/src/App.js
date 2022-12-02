@@ -5,6 +5,7 @@ import CardsContainer from "./CardsContainer"
 import AddBar from "./AddBar"
 import Header from "./Header"
 import Wardrobe from "./Wardrobe"
+import BotCheck from "./BotCheck";
 
 function App() {
   const [clothes, setClothes] = useState([])
@@ -29,7 +30,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
-          {/* add bot popup component */}
+          <BotCheck />
         </Route>
         <Route path="/home">
           <Header />
@@ -39,7 +40,7 @@ function App() {
           <CardsContainer clothes={clothes} setClothes={setClothes} />
         </Route>
         <Route path="/wardrobe">
-          <Wardrobe clothes={clothes} setClothes={setClothes}/>
+          <Wardrobe clothes={clothes} setClothes={setClothes} />
         </Route>
       </Switch>
     </div>
