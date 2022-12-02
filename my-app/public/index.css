@@ -1,0 +1,22 @@
+.days {
+    height: 300px;
+    width: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-style: solid;
+}
+
+.li-image {
+    height: 300px;
+    margin: 5px;
+
+}
+
+.li-card {
+    display: inline-table;
+    row-gap: 50px;
+    width: 180px;
+    margin: 5px;
+}
