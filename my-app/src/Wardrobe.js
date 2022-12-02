@@ -1,8 +1,35 @@
-
+import { useState, useEffect } from "react"
+import WardCard from "./WardCard"
 
 function Wardrobe({ clothes, setClothes }) {
+    const [onSunday, setOnSunday] = useState([])
+    const [onMonday, setOnMonday] = useState([])
+    const [onTuesday, setOnTuesday] = useState([])
+    const [onWednesday, setOnWednesday] = useState([])
+    const [onThursday, setOnThursday] = useState([])
+    const [onFriday, setOnFriday] = useState([])
+    const [onSaturday, setOnSaturday] = useState([])
+    const [dummy, setDummy] = useState("") //used to rerender component when item is removed / when page is reloaded manually it doesnt render in the first place
+
+    useEffect(() => {
+        const sundayCheck = clothes.filter(item => item.date === "Sunday")
+        setOnSunday(sundayCheck)
+        const mondayCheck = clothes.filter(item => item.date === "Monday")
+        setOnMonday(mondayCheck)
+        const tuesdayCheck = clothes.filter(item => item.date === "Tuesday")
+        setOnTuesday(tuesdayCheck)
+        const wednesdayCheck = clothes.filter(item => item.date === "Wednesday")
+        setOnWednesday(wednesdayCheck)
+        const thursdayCheck = clothes.filter(item => item.date === "Thursday")
+        setOnThursday(thursdayCheck)
+        const fridayCheck = clothes.filter(item => item.date === "Friday")
+        setOnFriday(fridayCheck)
+        const saturdayCheck = clothes.filter(item => item.date === "Saturday")
+        setOnSaturday(saturdayCheck)
+    }, [dummy])
 
     function handleRemoval(item) {
+        setDummy(item) //causes component to rerender allowing update on removed items
         console.log("ward", item)
         item.date = "All"
 
@@ -16,34 +43,84 @@ function Wardrobe({ clothes, setClothes }) {
             .then(r => r.json())
             .then(() => {
                 const returns = clothes.filter(clothe => {
-                    const check = clothe.id !== item.id
-                    return check, item
+                    const check = clothe.id !== item.id && item
+                    return check
                 })
                 return setClothes(returns)
             })
-
     }
 
-    const ward = clothes.filter(item => {
-        return item.date !== "All"
+    const sunMap = onSunday.map(item => {
+        return <WardCard item={item} handleRemoval={handleRemoval} />
     })
 
-    const maps = ward.map(item => {
-        return (
-            <li key={item.id} style={{ border: "10px" }}>
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
-                <button onClick={() => handleRemoval(item)}>Remove</button>
-            </li>
-        )
+    const monMap = onMonday.map(item => {
+        return <WardCard item={item} handleRemoval={handleRemoval} />
     })
 
-    // console.log("ward update", ward)
+    const tueMap = onTuesday.map(item => {
+        return <WardCard item={item} handleRemoval={handleRemoval} />
+    })
+
+    const wedMap = onWednesday.map(item => {
+        return <WardCard item={item} handleRemoval={handleRemoval} />
+    })
+
+    const thuMap = onThursday.map(item => {
+        return <WardCard item={item} handleRemoval={handleRemoval} />
+    })
+
+    const friMap = onFriday.map(item => {
+        return <WardCard item={item} handleRemoval={handleRemoval} />
+    })
+
+    const satMap = onSaturday.map(item => {
+        return <WardCard item={item} handleRemoval={handleRemoval} />
+    })
+    // const maps = clothes.map(item => {
+    //     const div = 
+    //         <div key={item.id} style={{ border: "10px" }}>
+    //             <h3>{item.name}</h3>
+    //             <p>{item.description}</p>
+    //             <button onClick={() => handleRemoval(item)}>Remove</button>
+    //         </div>
+
+    //     if (item.date !== "All") {
+    //         return (
+    //             { div }
+    //         )
+    //     }
+    // })
+
 
     return (
-        <ul>
-            {maps}
-        </ul>
+        <>
+            <table align="center" cellPadding="85">
+                <thead>
+                    <tr bgcolor="lightgrey" >
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>sat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align="center" >
+                        <td className="days" value="sunday">{sunMap}</td>
+                        <td className="days" value="monday">{monMap}</td>
+                        <td className="days" value="tuesday">{tueMap}</td>
+                        <td className="days" value="wednesday">{wedMap}</td>
+                        <td className="days" value="thursday">{thuMap}</td>
+                        <td className="days" value="friday">{friMap}</td>
+                        <td className="days" value="saturday">{satMap}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </>
+
     )
 }
 
@@ -51,11 +128,4 @@ function Wardrobe({ clothes, setClothes }) {
 
 export default Wardrobe;
 
-//this will have multiple sections, one for each day of the week and filter based off the object value it will be rendered to that dates card
-//might need to make another child component to pass the cards into and to render on the DOM.
 // maybe have when card is clicked, it should take you to the cards page or open just that card to show the image and click again to close it (like a learn more btn)
-
-
-//when item is removed from wardrobe, just patch the date to "All"
-
-//switch if date === sunday add state? then render state into a card? 
