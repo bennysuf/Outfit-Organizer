@@ -15,7 +15,7 @@ function App() {
       .then(data => {
         setClothes(data)
       })
-      .catch(error =>{
+      .catch(error => {
         console.log(error)
         alert("Uh oh! Seems like there was an error, please try again")
       })
@@ -29,12 +29,17 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
+          {/* add bot popup component */}
+        </Route>
+        <Route path="/home">
           <Header />
-          <AddBar clothes={clothes} setClothes={setClothes}/>
-          <CardsContainer clothes={clothes} />
+          <AddBar clothes={clothes} setClothes={setClothes} />
+        </Route>
+        <Route path="/portfolio">
+          <CardsContainer clothes={clothes} setClothes={setClothes} />
         </Route>
         <Route path="/wardrobe">
-          <Wardrobe />
+          <Wardrobe clothes={clothes} setClothes={setClothes}/>
         </Route>
       </Switch>
     </div>

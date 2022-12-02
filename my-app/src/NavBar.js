@@ -5,7 +5,7 @@ function NavBar(){
     <div>
         <NavLink 
         style={{ marginRight: "10px" }} 
-        to="/">
+        to="/home">
             Home 
         </NavLink>
         <NavLink

@@ -9,9 +9,7 @@ function CardsContainer({ clothes, setClothes }) {
     }
 
     function handleDateClick(item) {
-        // console.log(item)
-        // if (onDate !== "All") {
-            // console.log("data from fetch", item)
+    
             item.date = onDate
 
             fetch(`http://localhost:3000/clothes/${item.id}`, {
@@ -23,15 +21,13 @@ function CardsContainer({ clothes, setClothes }) {
             })
                 .then(r => r.json())
                 .then(() => {
-                    const returns = clothes.filter(cloth => {
-                        const check = cloth.id !== item.id
+                    const returns = clothes.filter(clothe => {
+                        const check = clothe.id !== item.id 
                         return check, item
                     })
                     return setClothes(returns)
                 }) 
-            // .catch(e => console.log("patch", e))
         }
-    // }
 
     function onDelete(item) {
         fetch(`http://localhost:3000/clothes/${item.id}`, {
@@ -47,10 +43,11 @@ function CardsContainer({ clothes, setClothes }) {
     const clotheCards = clothes.map((item) => {
         const { id, name, description, image } = item
         return (
-            <li key={id} style={{ border: "10px" }}>
-                <h3>{name}</h3>
+            <li className="li-card" key={id}>
+                <h3 className="trial">{name}</h3>
                 <p>{description}</p>
-                <img src={image} alt="" />
+                <img className="li-image" src={image} alt="" />
+                <br />
                 <select onChange={handleDateChange}>
                     <option value="All">Add to wardrobe</option>
                     <option value="Sunday">Sunday</option>
@@ -68,7 +65,6 @@ function CardsContainer({ clothes, setClothes }) {
         )
     })
 
-    // return <Cards clothes={clotheCards} />
     return (
         <ul>
             {clotheCards}
