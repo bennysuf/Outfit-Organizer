@@ -1,43 +1,42 @@
-// import Cards from "./Cards"
 import { useState } from "react"
 
 function CardsContainer({ clothes, setClothes }) {
-    const [onDate, setDate] = useState("")
+    const [onDate, setDate] = useState("All")
 
     function handleDateChange(e) {
         setDate(e.target.value)
     }
-
-    function handleDateClick(item) {
     
-            item.date = onDate
+    function handleDateClick(item) {
+        
+        item.date = onDate
 
-            fetch(`http://localhost:3000/clothes/${item.id}`, {
-                method: "PATCH",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    date: onDate
-                })
+        fetch(`http://localhost:3000/clothes/${item.id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                date: onDate
             })
-                .then(r => r.json())
-                .then(() => {
-                    const returns = clothes.filter(clothe => {
-                        const check = clothe.id !== item.id 
-                        return check, item
-                    })
-                    return setClothes(returns)
-                }) 
-        }
+        })
+            .then(r => r.json())
+            .then(() => {
+                const returns = clothes.filter(clothe => {
+                    const check = clothe.id !== item.id
+                    return check, item
+                })
+                return setClothes(returns)
+            })
+    }
 
     function onDelete(item) {
         fetch(`http://localhost:3000/clothes/${item.id}`, {
-                method: "DELETE"
-            })
+            method: "DELETE"
+        })
             .then(r => r.json())
             .then(() => {
                 const newList = clothes.filter(clothe => clothe.id !== item.id)
                 setClothes(newList)
-        })
+            })
     }
 
     const clotheCards = clothes.map((item) => {
@@ -77,3 +76,8 @@ export default CardsContainer;
 
 // will get the initial info for each card before passing it down to the card container to create each card
 
+
+/*
+ ~problems~
+ when removed from wardrobe, item doesnt render in cards, needs to rerender/refresh page to show 
+ */
