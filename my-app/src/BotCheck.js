@@ -6,7 +6,7 @@ function BotCheck() {
         <div className="robot">
             <label>Confirm you aren't a robot</label>
             <br />
-            <NavLink to="/home"><button>Click</button></NavLink>
+            <NavLink to="/home"><button style={{height: "40px", width:"75px"}}>Click</button></NavLink>
         </div >
 
     )
