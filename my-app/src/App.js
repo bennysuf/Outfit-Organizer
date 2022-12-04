@@ -9,21 +9,20 @@ import BotCheck from "./BotCheck";
 
 function App() {
   const [clothes, setClothes] = useState([])
-
+  const [reload, setReload] = useState("") // this is used to rerender components
+  
   useEffect(() => {
     fetch("http://localhost:3000/clothes")
-      .then(r => r.json())
-      .then(data => {
-        setClothes(data)
+    .then(r => r.json())
+    .then(data => {
+      setClothes(data)
       })
       .catch(error => {
         console.log(error)
         alert("Uh oh! Seems like there was an error, please try again")
       })
 
-  }, [])
-
-  // console.log("clothes", clothes)
+  }, [reload])
 
   return (
     <div>
@@ -40,7 +39,7 @@ function App() {
           <CardsContainer clothes={clothes} setClothes={setClothes} />
         </Route>
         <Route path="/wardrobe">
-          <Wardrobe clothes={clothes} setClothes={setClothes} />
+          <Wardrobe clothes={clothes} setClothes={setClothes} setReload={setReload} reload={reload}/>
         </Route>
         <Route path="*">
           <h1>404 Page Not Found</h1>
@@ -53,9 +52,3 @@ function App() {
 
 export default App;
 
-//add image, clothe name, description in home
-//portfolio renders all cards
-// can i create button for each day of the week which can update data obj,
-//wardrobe renders a card for each week and shows card name only?
-// add are you a bot button to open /home
-//add dropdown for each card with the days of the week and do an onChange to update the object value;
