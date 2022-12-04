@@ -49,31 +49,31 @@ function Wardrobe({ clothes, setClothes, setReload, reload}) {
     }
 
     const sunMap = onSunday.map(item => {
-        return <WardCard item={item} handleRemoval={handleRemoval} />
+        return <WardCard key={item.id} item={item} handleRemoval={handleRemoval} />
     })
 
     const monMap = onMonday.map(item => {
-        return <WardCard item={item} handleRemoval={handleRemoval} />
+        return <WardCard key={item.id} item={item} handleRemoval={handleRemoval} />
     })
 
     const tueMap = onTuesday.map(item => {
-        return <WardCard item={item} handleRemoval={handleRemoval} />
+        return <WardCard key={item.id} item={item} handleRemoval={handleRemoval} />
     })
 
     const wedMap = onWednesday.map(item => {
-        return <WardCard item={item} handleRemoval={handleRemoval} />
+        return <WardCard key={item.id} item={item} handleRemoval={handleRemoval} />
     })
 
     const thuMap = onThursday.map(item => {
-        return <WardCard item={item} handleRemoval={handleRemoval} />
+        return <WardCard key={item.id} item={item} handleRemoval={handleRemoval} />
     })
 
     const friMap = onFriday.map(item => {
-        return <WardCard item={item} handleRemoval={handleRemoval} />
+        return <WardCard key={item.id} item={item} handleRemoval={handleRemoval} />
     })
 
     const satMap = onSaturday.map(item => {
-        return <WardCard item={item} handleRemoval={handleRemoval} />
+        return <WardCard key={item.id} item={item} handleRemoval={handleRemoval} />
     })
 
     return (
