@@ -23,10 +23,12 @@
 
 .robot {
     position: absolute;
-    top: 50%;
-    left: 45%;
+    margin: auto;
+    top: 40%; 
+    left: 40%; 
     right: auto;
     bottom: auto;
+    justify-content:center;
 
     text-align: center;
     font-size: 18px;
@@ -34,10 +36,7 @@
     border-width: 3px;
     border-color: rgb(0, 115, 165);
     border-radius: 10px;
-    padding-top: 50px;
-    padding-right: 50px;
-    padding-bottom: 50px;
-    padding-left: 50px;
+    padding: 50px;
 
 
 }
