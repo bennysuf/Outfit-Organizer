@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import WardCard from "./WardCard"
 
-function Wardrobe({ clothes, setClothes }) {
+function Wardrobe({ clothes, setClothes, setReload, reload}) {
     const [onSunday, setOnSunday] = useState([])
     const [onMonday, setOnMonday] = useState([])
     const [onTuesday, setOnTuesday] = useState([])
@@ -9,7 +9,6 @@ function Wardrobe({ clothes, setClothes }) {
     const [onThursday, setOnThursday] = useState([])
     const [onFriday, setOnFriday] = useState([])
     const [onSaturday, setOnSaturday] = useState([])
-    const [dummy, setDummy] = useState("") //used to rerender component when item is removed / when page is reloaded manually it doesnt render in the first place
 
     useEffect(() => {
         const sundayCheck = clothes.filter(item => item.date === "Sunday")
@@ -26,13 +25,11 @@ function Wardrobe({ clothes, setClothes }) {
         setOnFriday(fridayCheck)
         const saturdayCheck = clothes.filter(item => item.date === "Saturday")
         setOnSaturday(saturdayCheck)
-    }, [dummy])
-
+    }, [reload])
+    
     function handleRemoval(item) {
-        setDummy(item) //causes component to rerender allowing update on removed items
-        console.log("ward", item)
         item.date = "All"
-
+        
         fetch(`http://localhost:3000/clothes/${item.id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
@@ -40,12 +37,13 @@ function Wardrobe({ clothes, setClothes }) {
                 date: "All"
             })
         })
-            .then(r => r.json())
-            .then(() => {
-                const returns = clothes.filter(clothe => {
-                    const check = clothe.id !== item.id && item
-                    return check
-                })
+        .then(r => r.json())
+        .then(() => {
+            const returns = clothes.filter(clothe => {
+                const check = clothe.id !== item.id && item
+                return check
+            })
+                setReload(item)
                 return setClothes(returns)
             })
     }
@@ -77,21 +75,6 @@ function Wardrobe({ clothes, setClothes }) {
     const satMap = onSaturday.map(item => {
         return <WardCard item={item} handleRemoval={handleRemoval} />
     })
-    // const maps = clothes.map(item => {
-    //     const div = 
-    //         <div key={item.id} style={{ border: "10px" }}>
-    //             <h3>{item.name}</h3>
-    //             <p>{item.description}</p>
-    //             <button onClick={() => handleRemoval(item)}>Remove</button>
-    //         </div>
-
-    //     if (item.date !== "All") {
-    //         return (
-    //             { div }
-    //         )
-    //     }
-    // })
-
 
     return (
         <>
