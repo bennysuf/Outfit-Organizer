@@ -92,13 +92,13 @@ function Wardrobe({ clothes, setClothes, setReload, reload}) {
                 </thead>
                 <tbody>
                     <tr align="center" >
-                        <td className="days" value="sunday">{sunMap}</td>
-                        <td className="days" value="monday">{monMap}</td>
-                        <td className="days" value="tuesday">{tueMap}</td>
-                        <td className="days" value="wednesday">{wedMap}</td>
-                        <td className="days" value="thursday">{thuMap}</td>
-                        <td className="days" value="friday">{friMap}</td>
-                        <td className="days" value="saturday">{satMap}</td>
+                        <td className="days">{sunMap}</td>
+                        <td className="days">{monMap}</td>
+                        <td className="days">{tueMap}</td>
+                        <td className="days">{wedMap}</td>
+                        <td className="days">{thuMap}</td>
+                        <td className="days">{friMap}</td>
+                        <td className="days">{satMap}</td>
                     </tr>
                 </tbody>
             </table>
