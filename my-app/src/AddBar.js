@@ -1,5 +1,5 @@
 import { useState } from "react"
-import {v4 as uuid} from "uuid";
+import { v4 as uuid } from "uuid";
 
 function AddBar({ clothes, setClothes }) {
     const [onName, setOnName] = useState("")
@@ -38,12 +38,11 @@ function AddBar({ clothes, setClothes }) {
             .then(alert("Item added!"))
             .catch(e => console.log(e))
 
-        //take all states and post and add to clothes state with values as object values
     }
 
     return (
         <form style={{ marginBottom: "10px" }}>
-            <label style={{ marginRight: "5px" }}>Clothe name:</label>
+            <label style={{ marginRight: "5px" }}>Outfit name:</label>
             <input name="name" type="text" value={onName} style={{ marginBottom: "10px" }} onChange={handleNameChange} />
             <br />
             <label style={{ marginRight: "5px" }}>Description:</label>
