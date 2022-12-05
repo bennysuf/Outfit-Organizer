@@ -46,7 +46,7 @@ function AddBar({ clothes, setClothes }) {
             <label style={{ marginRight: "5px" }}>Outfit name:</label>
             <input name="name" type="text" value={onName} style={{ marginBottom: "10px" }} onChange={handleNameChange} />
             <br />
-            <label style={{ marginRight: "8px" }}>Description:</label>
+            <label style={{ marginRight: "7px" }}>Description:</label>
             <input type="text" name="description" value={description} style={{ marginBottom: "10px" }} onChange={handleDescriptionChange} />
             <br />
             <label style={{ marginRight: "13px" }}>Image link:</label>
