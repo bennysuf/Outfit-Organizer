@@ -5,46 +5,35 @@
     By being able to upload outfits and add them to a weeklong calendar, this project will allow you to do just that.
     Upload outfits, name, description, and photo. 
 
-## how to start it up:
+## How to start it up:
     Clone the repository and open it in your directory. 
-    Navigate to the my-app folder and run
+    Navigate to the my-app folder and run:
+   `$ npm install` or `$ npm i`
+    then:
+   `$ npm start` 
+    you will then be taken to the browser to start using the project.
 
-   `npm install`
+## How to use it:
+    Once you click on the checkbox proving you are human you be taken to the home page.
+    The Home page is where you upload your outfit, giving it a name and description and posting a link to your image.
+    After the outfit is added you will be able to check it out in your Portfolio.
+    In the portfolio you have the option to delete an outfit or add it to your wardrobe using the drop down.
+    Select the day you would like to wear your outfit and click on the add button.
+    You will be able to see the outfits you designated for the week in the Wardrobe.
 
-    then 
-   `npm start` 
+## Key details:
+    To upload an image it will have to be a link.
     
+    Here are some sample links to try:
+    https://www.ferbena.com/wp-content/uploads/2021/02/amazon.com-1-4.jpg
+    https://www.ferbena.com/wp-content/uploads/2021/02/How-to-Style-Oversized-Blazer-For-Office-Outfit-Looks-.jpg
 
-    and you will be taken to the browser to start using the project.
+    source:
+    https://www.ferbena.com/style-oversized-blazer-office-outfit-looks.html
 
-    Open the project directory and navigate to the my-app folder
-copy code SSH code . go to my app run npm i then npm start
-npm i then npm
-
-how to use it:
 example photos:
-key details:
 sources:
 
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
 
 
