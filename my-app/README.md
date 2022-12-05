@@ -1,7 +1,7 @@
 # My Phase-2 Project
 
 ## What my project is:
-    Unsure what to wear today? Want to not waist time picking out an outfit? 
+    Unsure what to wear today? Want to not waste time picking out an outfit? 
     By being able to upload outfits and add them to a weeklong calendar, this project will allow you to do just that.
     Upload outfits, name, description, and photo. 
 
@@ -9,8 +9,10 @@
     Clone the repository and open it in your directory. 
     Navigate to the my-app folder and run:
    `$ npm install` or `$ npm i`
+
     then:
    `$ npm start` 
+
     you will then be taken to the browser to start using the project.
 
 ## How to use it:
