@@ -9,16 +9,12 @@
     Clone the repository and open it in your directory. 
     Navigate to the my-app folder and run
 
-    ```bash 
-    npm install 
-    ```
+   `npm install`
 
     then 
-
-     ```bash 
-    npm start 
-    ```
+   `npm start` 
     
+
     and you will be taken to the browser to start using the project.
 
     Open the project directory and navigate to the my-app folder
