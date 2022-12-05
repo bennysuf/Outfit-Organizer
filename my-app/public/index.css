@@ -38,4 +38,16 @@
     font-size: 25px;
 }
 
+.header {
+    text-align: center;
+}
+
+.nav {
+    text-align: center;
+}
+ .form {
+    margin-bottom: 10px;
+    text-align: center;
+    top: 50%;
+ }
 
