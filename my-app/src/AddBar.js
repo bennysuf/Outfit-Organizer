@@ -41,14 +41,15 @@ function AddBar({ clothes, setClothes }) {
     }
 
     return (
-        <form style={{ marginBottom: "10px" }}>
+        <form className="form">
+            <h3>Add Outfits</h3>
             <label style={{ marginRight: "5px" }}>Outfit name:</label>
             <input name="name" type="text" value={onName} style={{ marginBottom: "10px" }} onChange={handleNameChange} />
             <br />
-            <label style={{ marginRight: "5px" }}>Description:</label>
+            <label style={{ marginRight: "8px" }}>Description:</label>
             <input type="text" name="description" value={description} style={{ marginBottom: "10px" }} onChange={handleDescriptionChange} />
             <br />
-            <label style={{ marginRight: "5px" }}>Image link:</label>
+            <label style={{ marginRight: "13px" }}>Image link:</label>
             <input type="text" name="image" value={image} style={{ marginBottom: "10px" }} onChange={handleImageChange} />
             <br />
             <button onClick={handleSubmit}>Submit</button>
