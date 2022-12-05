@@ -4,9 +4,9 @@ function BotCheck() {
 
     return (
         <div className="robot">
-            <label>Confirm you aren't a robot</label>
-            <br />
-            <NavLink to="/home"><button style={{height: "40px", width:"75px"}}>Click</button></NavLink>
+            <NavLink to="/home"><input type="checkbox" checked={null} style={{ height: "30px", width: "75px" }}></input></NavLink>
+            <label className="lable">I'm not a robot</label>
+            
         </div >
 
     )
