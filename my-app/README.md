@@ -19,6 +19,9 @@
 ## How to use it:
     Once you click on the checkbox proving you are human you be taken to the home page.
     The Home page is where you upload your outfit, giving it a name and description and posting a link to your image.
+        
+<img width="695" alt="Screen Shot 2022-12-05 at 1 54 56 PM" src="https://user-images.githubusercontent.com/109253075/205719672-670217c9-cdf3-4f70-97a9-8a16ac76dc45.png">
+
     After the outfit is added you will be able to check it out in your Portfolio.
     In the portfolio you have the option to delete an outfit or add it to your wardrobe using the drop down.
     Select the day you would like to wear your outfit and click on the add button.
