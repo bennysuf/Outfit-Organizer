@@ -59,6 +59,3 @@ function AddBar({ clothes, setClothes }) {
 }
 
 export default AddBar;
-
-// this is for adding new cards, in an onsubmit it should pass the info up to App to render into cards
-//should be able to take an image link, description, and a name for the card
