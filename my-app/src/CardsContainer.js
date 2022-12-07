@@ -1,14 +1,16 @@
 import { useState } from "react"
+import { NavLink } from "react-router-dom"
 
 function CardsContainer({ clothes, setClothes }) {
     const [onDate, setDate] = useState("All")
 
+
     function handleDateChange(e) {
         setDate(e.target.value)
     }
-    
+
     function handleDateClick(item) {
-        
+
         item.date = onDate
 
         fetch(`http://localhost:3004/clothes/${item.id}`, {
@@ -65,9 +67,12 @@ function CardsContainer({ clothes, setClothes }) {
     })
 
     return (
-        <ul>
-            {clotheCards}
-        </ul>
+        <>
+            <NavLink to="/portfolio/wardrobe" style={{display: "flex", justifyContent: "center", marginTop: "20px"}}>Wardrobe</NavLink>
+            <ul>
+                {clotheCards}
+            </ul>
+        </>
     )
 
 }
