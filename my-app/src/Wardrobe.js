@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
+import { NavLink, Route, Switch } from "react-router-dom"
 import WardCard from "./WardCard"
 
-function Wardrobe({ clothes, setClothes, setReload, reload}) {
+function Wardrobe({ clothes, setClothes, setReload, reload }) {
     const [onSunday, setOnSunday] = useState([])
     const [onMonday, setOnMonday] = useState([])
     const [onTuesday, setOnTuesday] = useState([])
@@ -26,10 +27,10 @@ function Wardrobe({ clothes, setClothes, setReload, reload}) {
         const saturdayCheck = clothes.filter(item => item.date === "Saturday")
         setOnSaturday(saturdayCheck)
     }, [reload])
-    
+
     function handleRemoval(item) {
         item.date = "All"
-        
+
         fetch(`http://localhost:3004/clothes/${item.id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
@@ -37,12 +38,12 @@ function Wardrobe({ clothes, setClothes, setReload, reload}) {
                 date: "All"
             })
         })
-        .then(r => r.json())
-        .then(() => {
-            const returns = clothes.filter(clothe => {
-                const check = clothe.id !== item.id && item
-                return check
-            })
+            .then(r => r.json())
+            .then(() => {
+                const returns = clothes.filter(clothe => {
+                    const check = clothe.id !== item.id && item
+                    return check
+                })
                 setReload(item)
                 return setClothes(returns)
             })
@@ -76,32 +77,34 @@ function Wardrobe({ clothes, setClothes, setReload, reload}) {
         return <WardCard key={item.id} item={item} handleRemoval={handleRemoval} />
     })
 
+    const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
+    const daysMap = daysOfWeek.map(date => <th><NavLink to={`/portfolio/wardrobe/${date}`}>{date}</NavLink></th>)
+
+    const maps = [sunMap, monMap, tueMap, wedMap, thuMap, friMap, satMap]
+
+    const mapsMap = maps.map(date => <td className="days">{date}</td>)
+
     return (
         <>
             <table align="center" cellPadding="85">
                 <thead>
                     <tr bgcolor="lightgrey" >
-                        <th>Sun</th>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>sat</th>
+                        {daysMap}
                     </tr>
                 </thead>
                 <tbody>
                     <tr align="center" >
-                        <td className="days">{sunMap}</td>
-                        <td className="days">{monMap}</td>
-                        <td className="days">{tueMap}</td>
-                        <td className="days">{wedMap}</td>
-                        <td className="days">{thuMap}</td>
-                        <td className="days">{friMap}</td>
-                        <td className="days">{satMap}</td>
+                        {mapsMap}
                     </tr>
                 </tbody>
             </table>
+            {/* <Switch>
+                <Route path="/portfolio/wardrobe/Sun">
+
+                    {sunMap}
+                </Route>
+            </Switch> */}
         </>
 
     )
