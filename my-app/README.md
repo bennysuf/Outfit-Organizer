@@ -13,7 +13,7 @@
     Once your dependencies are installed, run:
    `$ npm run server` 
 
-    Then in a new termonal, run:
+    Then in a new terminal, run:
    `$ npm start` 
 
     You will then be taken to the browser to start using the project.
@@ -21,7 +21,8 @@
 
 ## How to use it:
     Once you click on the checkbox proving you are human you be taken to the home page.
-    The Home page is where you upload your outfit, giving it a name and description and posting a link to your image.
+    In the Home page you will be able to upload your outfit by clicking on the "Add new item" button.
+    It will take you to a page where you can give it a name, a description, and post a link to your image.
         
 <img width="695" alt="Screen Shot 2022-12-05 at 1 54 56 PM" src="https://user-images.githubusercontent.com/109253075/205719672-670217c9-cdf3-4f70-97a9-8a16ac76dc45.png">
 
