@@ -13,11 +13,6 @@ function NavBar(){
          to="/portfolio">
             Portfolio 
         </NavLink>
-        <NavLink
-         style={{ marginRight: "10px" }} 
-         to="/wardrobe">
-            Wardrobe 
-        </NavLink>
     </div>
  )
 }
