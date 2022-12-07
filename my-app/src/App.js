@@ -31,8 +31,10 @@ function App() {
         <Route exact path="/">
           <BotCheck />
         </Route>
-        <Route path="/home">
+        <Route exact path="/home">
           <Header />
+        </Route>
+        <Route path="/home/new" >
           <AddBar clothes={clothes} setClothes={setClothes} />
         </Route>
         <Route path="/portfolio">
