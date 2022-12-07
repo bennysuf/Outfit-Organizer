@@ -1,5 +1,18 @@
 {
     "clothes": [
-      
+       {
+      "id": "88163e4f-93d4-e9d8-66b6-a8e7b0ec41e4",
+      "name": "Test",
+      "description": "Fall dressy casual",
+      "image": "https://www.mychicobsession.com/wp-content/uploads/2020/06/camel-coat-classic-outfit-7-of-16.jpg",
+      "date": "All"
+    },
+    {
+      "id": "f34a3321-50d9-2fa9-3323-0204bac4112c",
+      "name": "Test 2",
+      "description": "Night out with friends",
+      "image": "https://resize.img.allw.mn/filters:format(webp)/filters:quality(70)/1200x1200/thumbs/f4/mc/bda6lu9r59c15d907db8d894822743_640x640.jpg",
+      "date": "All"
+    }
     ]
   }
