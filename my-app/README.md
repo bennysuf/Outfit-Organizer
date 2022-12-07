@@ -13,7 +13,7 @@
     Once your dependencies are installed, run:
    `$ npm run server` 
 
-    Then:
+    Then in a new termonal, run:
    `$ npm start` 
 
     You will then be taken to the browser to start using the project.
