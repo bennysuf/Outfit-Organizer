@@ -12,7 +12,7 @@ function App() {
   const [reload, setReload] = useState("") // this is used to rerender components
   
   useEffect(() => {
-    fetch("http://localhost:3000/clothes")
+    fetch("http://localhost:3004/clothes")
     .then(r => r.json())
     .then(data => {
       setClothes(data)
