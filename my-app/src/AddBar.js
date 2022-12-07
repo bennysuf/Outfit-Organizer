@@ -28,7 +28,7 @@ function AddBar({ clothes, setClothes }) {
             date: "All"
         }
 
-        fetch("http://localhost:3000/clothes", {
+        fetch("http://localhost:3004/clothes", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newItem),
