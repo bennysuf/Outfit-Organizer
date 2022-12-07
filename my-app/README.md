@@ -9,6 +9,9 @@
     Clone the repository and open it in your directory. 
     Navigate to the my-app folder and run:
    `$ npm install` or `$ npm i`
+   
+    Once your dependencies are installed, run:
+   `$ npm run server` 
 
     Then:
    `$ npm start` 
