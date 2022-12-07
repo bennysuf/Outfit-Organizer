@@ -37,10 +37,10 @@ function App() {
         <Route path="/home/new" >
           <AddBar clothes={clothes} setClothes={setClothes} />
         </Route>
-        <Route path="/portfolio">
+        <Route exact path="/portfolio">
           <CardsContainer clothes={clothes} setClothes={setClothes} />
         </Route>
-        <Route path="/wardrobe">
+        <Route path="/portfolio/wardrobe">
           <Wardrobe clothes={clothes} setClothes={setClothes} setReload={setReload} reload={reload}/>
         </Route>
         <Route path="*">
