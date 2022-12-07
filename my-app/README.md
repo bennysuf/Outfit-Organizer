@@ -6,7 +6,7 @@
     Upload outfits, name, description, and photo. 
 
 ## How to start it up:
-    Clone the repository and open it in your directory. 
+    Clone the repository and open it in your terminal. 
     Navigate to the my-app folder and run:
    `$ npm install` or `$ npm i`
    
