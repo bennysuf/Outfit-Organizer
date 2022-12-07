@@ -11,7 +11,7 @@ function CardsContainer({ clothes, setClothes }) {
         
         item.date = onDate
 
-        fetch(`http://localhost:3000/clothes/${item.id}`, {
+        fetch(`http://localhost:3004/clothes/${item.id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -29,7 +29,7 @@ function CardsContainer({ clothes, setClothes }) {
     }
 
     function onDelete(item) {
-        fetch(`http://localhost:3000/clothes/${item.id}`, {
+        fetch(`http://localhost:3004/clothes/${item.id}`, {
             method: "DELETE"
         })
             .then(r => r.json())
@@ -73,11 +73,3 @@ function CardsContainer({ clothes, setClothes }) {
 }
 
 export default CardsContainer;
-
-// will get the initial info for each card before passing it down to the card container to create each card
-
-
-/*
- ~problems~
- when removed from wardrobe, item doesnt render in cards, needs to rerender/refresh page to show 
- */
