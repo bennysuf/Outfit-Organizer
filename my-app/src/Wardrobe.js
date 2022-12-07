@@ -30,7 +30,7 @@ function Wardrobe({ clothes, setClothes, setReload, reload}) {
     function handleRemoval(item) {
         item.date = "All"
         
-        fetch(`http://localhost:3000/clothes/${item.id}`, {
+        fetch(`http://localhost:3004/clothes/${item.id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -110,5 +110,3 @@ function Wardrobe({ clothes, setClothes, setReload, reload}) {
 
 
 export default Wardrobe;
-
-// maybe have when card is clicked, it should take you to the cards page or open just that card to show the image and click again to close it (like a learn more btn)
