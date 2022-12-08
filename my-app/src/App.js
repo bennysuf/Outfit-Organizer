@@ -33,7 +33,7 @@ function App() {
         <Route exact path="/home">
           <Header />
         </Route>
-        <Route path="/home/new" >
+        <Route path="/new" >
           <AddBar clothes={clothes} setClothes={setClothes} />
         </Route>
         <Route exact path="/portfolio">
