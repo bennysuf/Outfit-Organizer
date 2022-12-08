@@ -1,10 +1,13 @@
 import { useState } from "react"
 import { v4 as uuid } from "uuid";
+import { useHistory } from "react-router-dom";
 
 function AddBar({ clothes, setClothes }) {
     const [onName, setOnName] = useState("")
     const [description, setDescription] = useState("")
     const [image, setImage] = useState("")
+
+    const history = useHistory()
 
     function handleNameChange(e) {
         setOnName(e.target.value)
@@ -17,9 +20,9 @@ function AddBar({ clothes, setClothes }) {
     }
 
     function handleSubmit(e) {
-
+        
         e.preventDefault()
-
+        
         const newItem = {
             id: uuid(),
             name: onName,
@@ -27,30 +30,29 @@ function AddBar({ clothes, setClothes }) {
             image: image,
             date: "All"
         }
-
+        
         fetch("http://localhost:3004/clothes", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newItem),
         })
-            .then(r => r.json())
-            .then(() => setClothes([...clothes, newItem]))
-            .then(alert("Item added!"))
-            .catch(e => console.log(e))
-
+        .then(r => r.json())
+        .then(() => setClothes([...clothes, newItem]))
+        .catch(e => console.log(e))
+        history.push("/portfolio")
     }
 
     return (
         <form className="form">
             <h3>Add Outfits</h3>
             <label style={{ marginRight: "5px" }}>Outfit name:</label>
-            <input name="name" type="text" value={onName} style={{ marginBottom: "10px" }} onChange={handleNameChange} />
+            <input type="text" placeholder="Name" value={onName} style={{ marginBottom: "10px" }} onChange={handleNameChange} />
             <br />
             <label style={{ marginRight: "7px" }}>Description:</label>
-            <input type="text" name="description" value={description} style={{ marginBottom: "10px" }} onChange={handleDescriptionChange} />
+            <input type="text" placeholder="Description" value={description} style={{ marginBottom: "10px" }} onChange={handleDescriptionChange} />
             <br />
             <label style={{ marginRight: "13px" }}>Image link:</label>
-            <input type="text" name="image" value={image} style={{ marginBottom: "10px" }} onChange={handleImageChange} />
+            <input type="text" placeholder="Image" value={image} style={{ marginBottom: "10px" }} onChange={handleImageChange} />
             <br />
             <button onClick={handleSubmit}>Submit</button>
         </form>
