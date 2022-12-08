@@ -1,5 +1,5 @@
 
-function WardCard({item, handleRemoval}) {
+function WardCard({ item, handleRemoval }) {
     return (
         <div key={item.id} style={{ border: "10px" }}>
             <h3>{item.name}</h3>

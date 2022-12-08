@@ -18,7 +18,6 @@ function App() {
         setClothes(data)
       })
       .catch(error => {
-        console.log(error)
         alert("Uh oh! Seems like there was an error, please try again")
       })
 

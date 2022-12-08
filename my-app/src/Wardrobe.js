@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import { NavLink, Route, Switch } from "react-router-dom"
 import WardCard from "./WardCard"
 
 function Wardrobe({ clothes, setClothes, setReload, reload }) {
@@ -79,32 +78,26 @@ function Wardrobe({ clothes, setClothes, setReload, reload }) {
 
     const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
-    const daysMap = daysOfWeek.map(date => <th><NavLink to={`/portfolio/wardrobe/${date}`}>{date}</NavLink></th>)
+    const daysMap = daysOfWeek.map(date => <th>{date}</th>)
 
-    const maps = [sunMap, monMap, tueMap, wedMap, thuMap, friMap, satMap]
+    const statesOfWeek = [sunMap, monMap, tueMap, wedMap, thuMap, friMap, satMap]
 
-    const mapsMap = maps.map(date => <td className="days">{date}</td>)
+    const stateMap = statesOfWeek.map(date => <td className="days">{date}</td>)
 
     return (
         <>
             <table align="center" cellPadding="85">
                 <thead>
-                    <tr bgcolor="lightgrey" >
+                    <tr style={{ backgroundColor: "lightgrey" }} >
                         {daysMap}
                     </tr>
                 </thead>
                 <tbody>
                     <tr align="center" >
-                        {mapsMap}
+                        {stateMap}
                     </tr>
                 </tbody>
             </table>
-            {/* <Switch>
-                <Route path="/portfolio/wardrobe/Sun">
-
-                    {sunMap}
-                </Route>
-            </Switch> */}
         </>
 
     )

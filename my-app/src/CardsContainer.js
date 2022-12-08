@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { NavLink } from "react-router-dom"
 
 function CardsContainer({ clothes, setClothes }) {
     const [onDate, setDate] = useState("All")
@@ -67,9 +66,9 @@ function CardsContainer({ clothes, setClothes }) {
     })
 
     return (
-            <ul>
-                {clotheCards}
-            </ul>
+        <ul>
+            {clotheCards}
+        </ul>
     )
 
 }

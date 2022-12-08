@@ -38,7 +38,6 @@ function AddBar({ clothes, setClothes }) {
         })
         .then(r => r.json())
         .then(() => setClothes([...clothes, newItem]))
-        .catch(e => console.log(e))
         history.push("/portfolio")
     }
 
