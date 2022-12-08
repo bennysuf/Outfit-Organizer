@@ -4,7 +4,7 @@ function Header() {
     return (
         <>
             <h1 className="header">Outfit Organizer</h1>
-            <NavLink to="/home/new" className="add"><button>Add new item</button></NavLink>
+            <NavLink to="/new" className="add"><button>Add new item</button></NavLink>
         </>
     )
 }
