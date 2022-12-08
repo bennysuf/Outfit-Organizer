@@ -26,7 +26,7 @@
         
 <img width="695" alt="Screen Shot 2022-12-05 at 1 54 56 PM" src="https://user-images.githubusercontent.com/109253075/205719672-670217c9-cdf3-4f70-97a9-8a16ac76dc45.png">
 
-    After the outfit is added you will be able to check it out in your Portfolio.
+    After the outfit is added you will be redirected to your Portfolio.
     In the portfolio you have the option to delete an outfit or add it to your wardrobe using the drop down.
     Select the day you would like to wear your outfit and click on the add button.
     You will be able to see the outfits you designated for the week in the Wardrobe.
