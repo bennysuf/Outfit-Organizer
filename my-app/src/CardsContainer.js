@@ -67,12 +67,9 @@ function CardsContainer({ clothes, setClothes }) {
     })
 
     return (
-        <>
-            <NavLink to="/portfolio/wardrobe" style={{display: "flex", justifyContent: "center", marginTop: "20px"}}>Wardrobe</NavLink>
             <ul>
                 {clotheCards}
             </ul>
-        </>
     )
 
 }

@@ -10,12 +10,12 @@ import BotCheck from "./BotCheck";
 function App() {
   const [clothes, setClothes] = useState([])
   const [reload, setReload] = useState("") // this is used to rerender components
-  
+
   useEffect(() => {
     fetch("http://localhost:3004/clothes")
-    .then(r => r.json())
-    .then(data => {
-      setClothes(data)
+      .then(r => r.json())
+      .then(data => {
+        setClothes(data)
       })
       .catch(error => {
         console.log(error)
@@ -40,8 +40,8 @@ function App() {
         <Route exact path="/portfolio">
           <CardsContainer clothes={clothes} setClothes={setClothes} />
         </Route>
-        <Route path="/portfolio/wardrobe">
-          <Wardrobe clothes={clothes} setClothes={setClothes} setReload={setReload} reload={reload}/>
+        <Route path="/wardrobe">
+          <Wardrobe clothes={clothes} setClothes={setClothes} setReload={setReload} reload={reload} />
         </Route>
         <Route path="*">
           <h1>404 Page Not Found</h1>
