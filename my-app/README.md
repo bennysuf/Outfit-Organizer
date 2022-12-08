@@ -3,7 +3,7 @@
 ## What my project is:
     Unsure what to wear today? Want to not waste time picking out an outfit? 
     By being able to upload outfits and add them to a weeklong calendar, this project will allow you to do just that.
-    Upload outfits, name, description, and photo. 
+    Upload outfits with a name, description, and photo. 
 
 ## How to start it up:
     Clone the repository and open it in your terminal. 
@@ -22,9 +22,11 @@
 ## How to use it:
     Once you click on the checkbox proving you are human you be taken to the home page.
     In the Home page you will be able to upload your outfit by clicking on the "Add new item" button.
+    <img width="377" alt="Screen Shot 2022-12-08 at 2 04 26 PM" src="https://user-images.githubusercontent.com/109253075/206549193-22134d67-473f-4af7-a1dc-92a5d4ee8fb5.png">
+
     It will take you to a page where you can give it a name, a description, and post a link to your image.
-        
-<img width="695" alt="Screen Shot 2022-12-05 at 1 54 56 PM" src="https://user-images.githubusercontent.com/109253075/205719672-670217c9-cdf3-4f70-97a9-8a16ac76dc45.png">
+     <img width="348" alt="Screen Shot 2022-12-08 at 2 04 35 PM" src="https://user-images.githubusercontent.com/109253075/206549228-28aaa604-4586-410e-a3f7-a25c3b970429.png">
+   
 
     After the outfit is added you will be redirected to your Portfolio.
     In the portfolio you have the option to delete an outfit or add it to your wardrobe using the drop down.
