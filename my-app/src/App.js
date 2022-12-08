@@ -17,7 +17,7 @@ function App() {
       .then(data => {
         setClothes(data)
       })
-      .catch(error => {
+      .catch(() => {
         alert("Uh oh! Seems like there was an error, please try again")
       })
 
