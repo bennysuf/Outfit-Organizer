@@ -1,4 +1,4 @@
-# My Phase-2 Project
+# Outfit Organizer App
 
 ## What my project is:
     Unsure what to wear today? Want to not waste time picking out an outfit? 
